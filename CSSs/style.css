@@ -1,0 +1,387 @@
+@font-face {
+    font-family: "RobotoRegular";
+    src: url(../FONTs/Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: "RobotoBlack";
+    src: url(../FONTs/Roboto/Roboto-Black.ttf);
+}
+@font-face {
+    font-family: "RobotoThin";
+    src: url(../FONTs/Roboto/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: "RobotoLight";
+    src: url(../FONTs/Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: "RobotoLightItalic";
+    src: url(../FONTs/Roboto/Roboto-LightItalic.ttf);
+}
+@font-face {
+    font-family: "FireCodeLight";
+    src: url(../FONTs/Fira_Code/ttf/FiraCode-Light.ttf);
+}
+:root{
+    --MeuPreto: #1b1b1b;
+    --MeuPretocode: #343434;
+    --MeuBranco: #cdcdcd;
+    --MeuVermelho: #E12B36;
+    --CodeLinuxOne: #ff6d91;
+    --CodeLinuxTwo: #8cb4ff;
+    --CodeLinuxThree: #0c0;
+    --JSCOLOR: #fbb030;
+    --HTMLCOLOR: #e84d1f;
+    --CSSCOLOR: #0f72b6;
+    --LinuxColor: #c515c2;
+}
+*{
+    margin: 0;
+    padding: 0;
+    user-select: none;/*controla a seleção de texto*/
+    list-style: none;
+    text-decoration: none;
+    font-family: 'RobotoRegular', sans-serif;
+    text-transform: none;
+    font-size: 1.2vw;
+    /* color: var(--MeuPreto); */
+}
+
+
+/*CONFIGURAÇÃO GERAL*/
+body{
+    background: var(--MeuPreto);
+    color: var(--MeuBranco);
+}
+/*CONFIGURAÇÃO GERAL*/
+.MainContainer div .configGeralMenus{
+    display: grid;
+    grid-template-columns: auto;
+    z-index: 999;
+    width: auto;
+    height: 6vh;
+    background: inherit;
+    position: sticky;
+    top: 6vh;
+    left: 0;
+    border-bottom: 1px solid var(--MeuBranco);
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+.MainContainer div .configGeralMenus .configGeralNav{
+    display: grid;
+    grid-template-rows: auto;
+    align-content: center;
+    justify-content: start;
+    background: inherit;
+    justify-self: start;
+}
+    .MainContainer div .configGeralMenus .configGeralNav ul{
+        display: flex;
+    }
+        .MainContainer div .configGeralMenus .configGeralNav ul li a{
+            display: block;
+            text-transform: lowercase;
+            color: currentColor;
+            padding: 0 1rem 0 1rem;
+        }
+            .MainContainer div .configGeralMenus .configGeralNav ul li a:hover{
+                color: var(--MeuVermelho);
+            }
+.MainContainer .AreaHome .CronoWeek .today #TaskDay{
+ border-color:  var(--MeuVermelho) !important;
+ /* background: #0f72b6; */
+}
+.MainContainer .AreaHome .CronoWeek .today span{
+    color: var(--MeuBraco) !important;
+}
+.MainContainer .AreaHome .CronoWeek .today #TaskDay span:hover{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.MainContainer .AreaHome .CronoWeek .today #TaskDay::before{
+    background-color:  var(--MeuVermelho) !important;
+}
+.MainContainer .AreaHome .CronoWeek .today #NameDay::before{
+    background-color:  var(--MeuVermelho) !important;
+}
+.MainContainer .AreaHome .CronoWeek .today #NameDay::after{
+    background-color:  var(--MeuVermelho) !important;
+}
+.MainContainer .AreaHome .CronoWeek .today #TaskDay:nth-last-child(1)::after{
+    background-color:  var(--MeuVermelho) !important;
+}
+.MainContainer .AreaHome .CronoWeek .today .TaskDone span{
+    color: var(--MeuPretocode) !important;
+    text-decoration: line-through 2px;
+}
+/*CONFIGURAÇÃO GERAL*/
+
+
+.MainContainer{
+    width: 100vw;
+    height: max-content;
+    display: grid;
+    grid-template-rows: auto; /*repeat(6, 1fr)*/
+    color: inherit;
+    background: inherit;
+}
+    .MainContainer .MainHeader{
+        display: grid;
+        grid-template-columns: 15rem auto;
+        z-index: 1000;
+
+        width: 100vw;
+        height: 6vh;
+        position: fixed;
+        background: inherit;
+        border-bottom: 1px solid var(--MeuBranco);
+    }
+        .MainContainer .MainHeader .MainLogo{
+            display: flex;
+            width: 15rem;
+            justify-content: center;
+            align-items: center;
+        }
+            .MainContainer .MainHeader .MainLogo .LogoPartOne{
+                font-family: 'RobotoBlack', sans-serif;
+                font-size: 1.5rem;
+                color: currentColor;
+            }
+            .MainContainer .MainHeader .MainLogo .LogoPartTwo{
+                font-family: 'RobotoThin', sans-serif;
+                font-size: 1.5rem;
+                color: currentColor;
+            }
+    .MainContainer .AreaHome{
+        background: inherit;
+        width: 100vw;
+        height: 75vh;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+    }
+        .MainContainer .AreaHome .CronoWeek{
+            /* background: inherit; */
+            width: 80vw;
+            height: 55vh;
+            display: grid;
+            grid-template-columns: repeat(7, calc(80vw / 7));
+        }
+        .MainContainer .AreaHome .CronoWeek .Day{
+            /* background: none; */
+            display: grid;
+            grid-template-rows: 1fr repeat(7, 1fr);
+            /* align-content: flex-start; */
+
+        }
+        .MainContainer .AreaHome .CronoWeek .Day #NameDay{
+            /* background: #c515c2; */
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            position: relative;
+            /* min-height: 2vw; */
+            /* height: 4vw; */
+            /* max-height: 4vw; */
+        }
+        .MainContainer .AreaHome .CronoWeek .Day #TaskDay{
+            /* background: red; */
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            position: relative;
+            border-left: .1rem solid var(--MeuPretocode);
+            /* min-height: 3vw; */
+        }
+        .MainContainer .AreaHome .CronoWeek .Day #TaskDay::before{
+            content: '';
+            position: absolute;
+            z-index: 1;
+            bottom: 50%;
+            left: 0;
+            width: 5rem;
+            height: .08rem;
+            background: var(--MeuPretocode);
+            transform: translateY(50%);
+        }
+        .MainContainer .AreaHome .CronoWeek .Day #NameDay::before{
+            content: '';
+            position: absolute;
+            z-index: 1;
+            bottom: 50%;
+            left: 0;
+            width: 5rem;
+            height: .08rem;
+            background: var(--MeuPretocode);
+            transform: translateY(50%);
+        }
+        .MainContainer .AreaHome .CronoWeek .Day #NameDay::after{
+            content: '';
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            width: .08rem;
+            height: 50%;
+            background: var(--MeuPretocode);
+        }
+        .MainContainer .AreaHome .CronoWeek .Day #TaskDay:nth-last-child(1)::after{
+            content: '';
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            width: .08rem;
+            height: 50%;
+            background: var(--MeuPretocode);
+        }
+        .MainContainer .AreaHome .CronoWeek .Day #TaskDay:nth-last-child(1){
+            border: none;
+        }
+            .MainContainer .AreaHome .CronoWeek .Day #NameDay span{
+                color: var(--MeuPretocode);
+                text-transform: uppercase;
+                font-size: 1.5rem;
+                z-index: 2;
+                background: var(--MeuPreto);
+                padding: 0 .1rem;
+            }
+            .MainContainer .AreaHome .CronoWeek .Day #TaskDay span{
+                color: var(--MeuPretocode);
+                text-transform: lowercase;
+                font-size: 1rem;
+                z-index: 2;
+                background: var(--MeuPreto);
+                width: calc(75vw / 8);
+                height: calc(20vw / 8);
+                display: grid;
+                align-content: center;
+                padding-left: .2rem;
+                /* border-radius: .3rem; */
+                /* padding: calc(5vw / 8) .1rem; */
+            }
+    .MainContainer .AreaConteudo{
+        width: 100vw;
+        height: fit-content;
+        background: inherit;
+        display: grid;
+        align-content: flex-start;
+    }
+        .MainContainer .AreaConteudo .AreaEspecificaConteudo{
+            /* background-color: #E12B36; */
+            width: 100vw;
+            height: fit-content;
+            display: grid;
+            grid-template-columns: auto;
+            justify-content: start;
+            /* padding-top: 10vh; */
+        }
+        .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos{
+            /* background: green; */
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-left: .1rem dashed var(--MeuBranco);
+            border-bottom: .1rem solid var(--MeuPretocode);
+            margin: 5rem 0 0 5rem;
+            /* padding-left: 1rem; */
+            /* padding-bottom: 2rem; */
+            /* margin-bottom: 2rem; */
+        }
+            .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos h1{
+                font-family: 'RobotoLight';
+                font-size: 1rem;
+                margin-left: 1rem;
+                padding-bottom: 2.5rem;
+            }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos #h1JS{
+                    color: var(--JSCOLOR);
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos #h1Html{
+                    color: var(--HTMLCOLOR);
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos #h1Css{
+                    color: var(--CSSCOLOR);
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos #h1Linux{
+                    color: var(--LinuxColor);
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos #h1SH{
+                    color: var(--CodeLinuxThree);
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos > h1::after{
+                    content: '|';
+                    color: var(--MeuVermelho);
+                    margin-left: 5px;
+                    opacity: 1;
+                    animation: piscaCursor .7s infinite;
+                }
+                @keyframes piscaCursor {
+                    0%, 100%{
+                        opacity: 1;
+                    }
+                    50%{
+                        opacity: 0;
+                    }
+                }
+            .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos .subArtigos{
+                /* background: blue; */
+                width: fit-content;
+                max-width: 80vw;
+                height: fit-content;
+                border-left: .1rem dashed var(--MeuBranco);
+                border-bottom: .1rem solid var(--MeuPretocode);
+                margin: 2.5rem 0 0 5rem;
+            }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos h2{
+                    font-family: 'RobotoLight';
+                    font-size: 1rem;
+                    margin-left: 1rem;
+                    padding-bottom: 2.5rem;
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos p#txt{
+                    text-transform: none;
+                    font-family: 'RobotoLight';
+                    font-size: .8rem;
+                    margin-left: 5rem;
+                    margin-bottom: .5rem;
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos p#code{
+                    text-transform: lowercase;
+                    font-family: 'RobotoLight';
+                    font-size: .8rem;
+                    user-select: text;
+                    background: var(--MeuPretocode);
+                    color: var(--MeuBranco);
+                    width: fit-content;
+                    height: fit-content;
+                    padding: .2rem 1.5rem .2rem 1.5rem;
+                    /* margin: .5rem 0 0 5rem; */
+                    margin-left: 5rem;
+                    margin-bottom: .5rem;
+                    border-radius: .5rem;
+                    line-height: 1.3rem;
+                    white-space: pre-line;
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos p#code span{
+                    text-transform: lowercase;
+                    font-family: 'FireCodeLight';
+                    font-size: .7rem;
+                    user-select: text;
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos p#code span#linuxConfigOne{
+                    color: var(--CodeLinuxOne);
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos p#code span#linuxConfigTwo{
+                    color: var(--CodeLinuxTwo);
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos p#code span#linuxConfigThree{
+                    color: var(--CodeLinuxThree);
+                }
+                .MainContainer .AreaConteudo .AreaEspecificaConteudo .artigos ::selection{
+                    color: var(--MeuBranco);
+                    background: var(--MeuVermelho);
+                }
