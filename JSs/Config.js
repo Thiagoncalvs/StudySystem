@@ -1,5 +1,5 @@
 // CONFIGURAÇÃO DE MENUS E SUBMENUS
-const respostaAllMenus = fetch("../JSONs/EstruturaMain.json").then(respostaData => {
+const respostaAllMenus = fetch("./JSONs/EstruturaConfig.json").then(respostaData => {
     return respostaData.json();
 }).then(jsonData => {
     var countEstruturaPrincipal = Object.keys(jsonData.EstruturaPrincipal).length
@@ -24,29 +24,3 @@ for(var i = 0 ; i < countEstruturaPrincipal ; i++){
 
 }
 }).catch(erro => { console.log(erro); });
-
-let VariavelToAdd = [{
-    "ObjHtml": "li",
-    "TipoAtributo": "id",
-    "Atributo": "liL",
-    "TipoAtributoTwo": " ",
-    "AtributoTwo": " ",
-    "localApply": "#MainMenu",
-    "Conteudo": " "
-},
-{
-    "ObjHtml": "a",
-    "TipoAtributo": "href",
-    "Atributo": "./Configuracoes.html",
-    "TipoAtributoTwo": "title",
-    "AtributoTwo": "Configuração",
-    "localApply": "#liL",
-    "Conteudo": "Configuração"
-}]
-
-export default VariavelToAdd;
-
-
-// console.log(...VariavelToAdd)
-
-

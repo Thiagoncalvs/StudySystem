@@ -79,6 +79,26 @@ body{
     .MainContainer div .configGeralMenus .configGeralNav ul{
         display: flex;
     }
+        .MainContainer div .configGeralMenus .configGeralNav ul li{
+            display: grid;
+            align-content: center;
+        }
+        .MainContainer div .configGeralMenus .configGeralNav ul li#liFirst{
+            order: 0;
+        }
+        .MainContainer div .configGeralMenus .configGeralNav ul li#liLast{
+            order: 100;
+        }
+        .MainContainer div .configGeralMenus .configGeralNav ul li#liLast .addicon{
+            background: url(../IMGs/icons8-add-100white.png);
+            background-size: cover;
+            width: 1.8vw;
+            height: 1.8vw;
+        }
+        .MainContainer div .configGeralMenus .configGeralNav ul li#liLast .addicon:hover{
+            background: url(../IMGs/icons8-add-100red.png);
+            background-size: cover;
+        }
         .MainContainer div .configGeralMenus .configGeralNav ul li a{
             display: block;
             text-transform: lowercase;
@@ -385,3 +405,22 @@ body{
                     color: var(--MeuBranco);
                     background: var(--MeuVermelho);
                 }
+
+/* ESTILIZAÇÃO DA PÁGINA DE CONFIGURAÇÃO */
+
+.MainContainer .AreaFormularioAddEstrutura{
+    width: 90vw;
+    height: fit-content;
+    background: var(--MeuPretocode);
+    position: relative;
+    top: 10vh;
+    justify-self: center;
+}
+.MainContainer .AreaMapaEstrutura{
+    width: 90vw;
+    height: fit-content;
+    background: var(--MeuPretocode);
+    position: relative;
+    top: 15vh;
+    justify-self: center;
+}

@@ -1,0 +1,40 @@
+{
+    "EstruturaPrincipal": [
+        {
+            "ObjHtml": "li",
+            "TipoAtributo": "id",
+            "Atributo": "liFirst",
+            "TipoAtributoTwo": " ",
+            "AtributoTwo": " ",
+            "localApply": "#MainMenu",
+            "Conteudo": " "
+        },
+        {
+            "ObjHtml": "a",
+            "TipoAtributo": "href",
+            "Atributo": "./index.html",
+            "TipoAtributoTwo": "title",
+            "AtributoTwo": "Home",
+            "localApply": "#liFirst",
+            "Conteudo": "Home"
+        },
+        {
+            "ObjHtml": "li",
+            "TipoAtributo": "id",
+            "Atributo": "liLast",
+            "TipoAtributoTwo": " ",
+            "AtributoTwo": " ",
+            "localApply": "#MainMenu",
+            "Conteudo": " "
+        },
+        {
+            "ObjHtml": "a",
+            "TipoAtributo": "href",
+            "Atributo": "./Configuracoes.html",
+            "TipoAtributoTwo": "title",
+            "AtributoTwo": "Configuração",
+            "localApply": "#liLast",
+            "Conteudo": "Configuração"
+        }
+    ]
+}
